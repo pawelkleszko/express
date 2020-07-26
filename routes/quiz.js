@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
     const show = !req.session.vote;
 
     Quiz.find({}, (err, data) => {
+        console.log(data);
         let sum = 0;
         data.forEach((item) => {
             sum += item.vote;
